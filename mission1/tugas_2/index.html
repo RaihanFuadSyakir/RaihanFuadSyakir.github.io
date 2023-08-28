@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="startTime()">
     <header class="bg-light-gray py-3">
         <div class="container mx-auto">
             <div class="d-flex content-between item-center">
-                <div>Icon</div>
+                <div id="clock" class="h3 bg-dark-gray pxy-1"></div>
                 <div class="d-flex gray">
                     <a href="" class="margin-1 h5">View all lessons</a>
                     <a href="" class="margin-1 h5">Toolkit</a>
@@ -38,34 +38,77 @@
         <div class="d-flex bg-light-gray text-center">
             <div>
                 <div class="h2">curated resource</div>
-                <div class="h5 gray">Don't know where to start? We’ve enlisted the world’s top designers to craft lessons for learning the tools, techniques & terminology of good design.</div>
+                <div class="h5 gray w-67 mx-auto">Don't know where to start? We’ve enlisted the world’s top designers to craft lessons for learning the tools, techniques & terminology of good design.</div>
             </div>
             <div>
                 <div class="h2">interactive content</div>
-                <div class="h5 gray">Learn by doing. Play with design puzzles and challenging games as you learn. Test your skills and explore possibilities.</div>
+                <div class="h5 gray w-67 mx-auto">Learn by doing. Play with design puzzles and challenging games as you learn. Test your skills and explore possibilities.</div>
             </div>
             <div>
                 <div class="h2">awesome design tools</div>
-                <div class="h5 gray">We’ve curated a list of the best design tools to help you figure out which ones to learn, and discover new and helpful tools you may have never heard of.</div>
+                <div class="h5 gray w-67 mx-auto">We’ve curated a list of the best design tools to help you figure out which ones to learn, and discover new and helpful tools you may have never heard of.</div>
             </div>
         </div>
     </section>
     <section>
-        <div>
-            <div>
-                <div>Meet your instructors</div>
-                <a href="">view complete list</a>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <div>Name</div>
-                        <div>life motto</div>
+        <div class="container mx-auto">
+            <div class="w-75 mx-auto">
+                <div class="h3 text-center darkred">Meet your Homies</div>
+                <a href="/" class="d-block h5 text-center mb-1">view complete list</a>
+                <div class="d-flex fd-column">
+                    <div class="d-flex mb-1">
+                        <div class="d-flex mx-1 w-auto">
+                            <img src="./images/profile_fikri.jpeg" alt="" class="profile-pict">
+                            <div class="flex-wrap flex-auto ml-1">
+                                <div class="h3">Fikri</div>
+                                <div class="h5">Hidup ini aneh, tapi setidaknya bukan bug, melainkan fitur unik.</div>
+                            </div>
+                        </div>
+                        <div class="d-flex mx-1 w-auto">
+                            <img src="./images/profile_hanri.jpeg" alt="" class="profile-pict">
+                            <div class="flex-wrap flex-auto ml-1">
+                                <div class="h3">Hanri</div>
+                                <div class="h5">Jangan pernah menyerah, kecuali saat jalan buntu diubah menjadi tempat parkir.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <div class="d-flex mx-1 w-auto">
+                            <img src="./images/profile_stanley.jpg" alt="" class="profile-pict">
+                            <div class="flex-wrap flex-auto ml-1">
+                                <div class="h3">Stanley</div>
+                                <div class="h5">Untuk apa kita berfikir? jika otak kita bisa melakukannya untuk kita</div>
+                            </div>
+                        </div>
+                        <div class="d-flex mx-1 w-auto">
+                            <img src="./images/profile_amin.jpg" alt="" class="profile-pict">
+                            <div class="flex-wrap flex-auto ml-1">
+                                <div class="h3">Amin</div>
+                                <div class="h5">Jangan hidup seperti Newton, kebanyakan gaya</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
     </section>
-    
+    <script>
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
 </body>
 </html>
