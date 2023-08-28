@@ -39,13 +39,6 @@ body {
 .content-between{
     justify-content: space-between;
 }
-
-.bg-light-gray{
-    background: #F3F4F6;
-}
-.bg-dark-gray{
-    background: #ccd0d6;
-}
 .btn-pad{
     display: inline-block;
     box-sizing: border-box;
@@ -72,7 +65,10 @@ body {
     border: 2px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-.margin-1{
+.m-0{
+    margin: 0;
+}
+.m-1{
     margin: 10px;
 }
 .margin-auto{
@@ -115,6 +111,9 @@ body {
     padding-bottom: 3rem;
 }
 
+.p-0{
+    padding: 0;
+}
 header{
     padding: 10px;
 }
@@ -139,6 +138,16 @@ input, button{
 }
 .h5{
     font-size: 20px;
+}
+
+.bg-light-gray{
+    background-color: #F3F4F6;
+}
+.bg-dark-gray{
+    background-color: #ccd0d6;
+}
+.bg-green{
+    background-color: green;
 }
 .gray{
     color: #949EB2;
