@@ -88,20 +88,29 @@ const setList = () => {
 const totalBtn = document.getElementById("getTotal");
 totalBtn.addEventListener('click',() =>{
     const cartList = document.getElementById("cart-item");
-    console.log(list.getListItem().map(item => item.name))
+    let totalPrice = 0
     list.getListItem().map(item => {
-        let newDiv = '<div>'
-        newDiv +=
+        if(item.nominal > 0){
+            let newDiv =
         `
         <div class="item-cart">
-            <div>${item.name}</div>
+            <div>
+                <div>${item.name}</div>
+                <div>${item.total}</div>
+            </div>
             <div>
                 <span>${item.value}</span> x <span>${item.nominal}</span>
             </div>
-            </div>
-            <div>${item.total}</div>`
-        newDiv += '</div>'
+            </div>`
         cartList.insertAdjacentHTML('beforeend', newDiv);
+        totalPrice += item.total;
+        }
     })
+    const totalPembelian = document.getElementById("total-pembelian");
+    totalPembelian.innerText = "Rp." + totalPrice;
+    const totalTax = document.getElementById("pajak");
+    totalTax.innerText = "Rp." + totalPrice * 0.11;
+    const totalPayment = document.getElementById("total-bayar");
+    totalPayment.innerText = "Rp." + (totalPrice + (totalPrice * 0.11));
 })
 setList();

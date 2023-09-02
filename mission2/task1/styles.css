@@ -25,6 +25,9 @@
 .d-flex .flex-wrap{
     flex-wrap: wrap;
 }
+.fd-row{
+    flex-direction: row;
+}
 .item-box{
     width: 200px;
     height: 200px;
